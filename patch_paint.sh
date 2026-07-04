@@ -1,0 +1,1 @@
+sed -i 's/val paint = android.graphics.Paint().apply {/val paint = android.graphics.Paint().apply {\n                        isAntiAlias = true\n                        setShadowLayer(6f, 0f, 2f, android.graphics.Color.BLACK)\n                        typeface = android.graphics.Typeface.DEFAULT_BOLD/g' app/src/main/java/com/example/ui/screens/worldclock/WorldClockScreen.kt

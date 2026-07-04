@@ -1,0 +1,1 @@
+sed -i 's/You are CHRONOS AI, a smart assistant for a clock app./You are CHRONOS AI, a smart assistant for a clock app.\\nApp features: World Clock (with live weather, temperature, morning\/afternoon\/night data), Alarms, Stopwatch, Timers, Settings./g' app/src/main/java/com/example/ui/screens/ai/AiAssistantScreen.kt

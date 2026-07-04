@@ -1,0 +1,3 @@
+sed -i '/val WORLD_CLOCK_GLOBE_STYLE/a\        val TEMPERATURE_UNIT = intPreferencesKey("temperature_unit")' app/src/main/java/com/example/data/repository/SettingsRepositoryImpl.kt
+sed -i '/override val worldClockGlobeStyle:/a\    override val temperatureUnit: Flow<Int> = context.dataStore.data.map { preferences ->\n        preferences[PreferencesKeys.TEMPERATURE_UNIT] ?: 0\n    }' app/src/main/java/com/example/data/repository/SettingsRepositoryImpl.kt
+sed -i '/override suspend fun setWorldClockGlobeStyle/a\    override suspend fun setTemperatureUnit(unit: Int) {\n        context.dataStore.edit { preferences ->\n            preferences[PreferencesKeys.TEMPERATURE_UNIT] = unit\n        }\n    }' app/src/main/java/com/example/data/repository/SettingsRepositoryImpl.kt

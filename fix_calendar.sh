@@ -1,0 +1,4 @@
+sed -i 's/ActivityResultContracts.RequestPermission()/ActivityResultContracts.RequestMultiplePermissions()/g' app/src/main/java/com/example/ui/screens/clock/CalendarEventsCard.kt
+sed -i 's/isGranted ->/permissions ->/g' app/src/main/java/com/example/ui/screens/clock/CalendarEventsCard.kt
+sed -i 's/hasPermission = isGranted/hasPermission = permissions[Manifest.permission.READ_CALENDAR] == true/g' app/src/main/java/com/example/ui/screens/clock/CalendarEventsCard.kt
+sed -i 's/launcher.launch(Manifest.permission.READ_CALENDAR)/if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) launcher.launch(arrayOf(Manifest.permission.READ_CALENDAR, Manifest.permission.POST_NOTIFICATIONS)) else launcher.launch(arrayOf(Manifest.permission.READ_CALENDAR))/g' app/src/main/java/com/example/ui/screens/clock/CalendarEventsCard.kt

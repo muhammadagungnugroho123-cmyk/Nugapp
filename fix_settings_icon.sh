@@ -1,0 +1,2 @@
+sed -i 's/androidx.compose.material.icons.Icons.Default.Settings/Icons.Default.Settings/g' app/src/main/java/com/example/ui/screens/weather/WeatherScreen.kt
+grep -q "import androidx.compose.material.icons.filled.Settings" app/src/main/java/com/example/ui/screens/weather/WeatherScreen.kt || sed -i '15i import androidx.compose.material.icons.filled.Settings' app/src/main/java/com/example/ui/screens/weather/WeatherScreen.kt

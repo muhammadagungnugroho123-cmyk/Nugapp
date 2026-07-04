@@ -1,0 +1,1 @@
+sed -i '/items(weatherDataList, key = { it.locationName }) { data ->/,/colors = CardDefaults.cardColors/ s/modifier = Modifier.fillMaxWidth()/modifier = Modifier.fillMaxWidth().animateItem()/g' app/src/main/java/com/example/ui/screens/weather/WeatherScreen.kt

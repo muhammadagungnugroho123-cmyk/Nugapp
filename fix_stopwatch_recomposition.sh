@@ -1,0 +1,1 @@
+sed -i 's/val elapsedTime by viewModel.elapsedTime.collectAsState()/val elapsedTime by viewModel.elapsedTime.collectAsState()\n    // Moved to separate composable to isolate recomposition/g' app/src/main/java/com/example/ui/screens/stopwatch/StopwatchScreen.kt

@@ -1,0 +1,5 @@
+sed -i 's/val currentTime by viewModel.currentTime.collectAsState()/val currentTimeState = viewModel.currentTime.collectAsState()/' app/src/main/java/com/example/ui/screens/worldclock/WorldClockScreen.kt
+sed -i 's/val timeString = sdfTime.format(currentTime)/val timeString = sdfTime.format(currentTimeState.value)/' app/src/main/java/com/example/ui/screens/worldclock/WorldClockScreen.kt
+sed -i 's/WorldCityCard(city, currentTime)/WorldCityCard(city = city, currentTimeProvider = { currentTimeState.value })/' app/src/main/java/com/example/ui/screens/worldclock/WorldClockScreen.kt
+sed -i 's/fun WorldCityCard(city: WorldCity, currentTime: Long)/fun WorldCityCard(city: WorldCity, currentTimeProvider: () -> Long)/' app/src/main/java/com/example/ui/screens/worldclock/WorldClockScreen.kt
+sed -i 's/val timeString = sdfTime.format(currentTime)/val currentTime = currentTimeProvider()\n    val timeString = sdfTime.format(currentTime)/' app/src/main/java/com/example/ui/screens/worldclock/WorldClockScreen.kt

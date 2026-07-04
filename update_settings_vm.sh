@@ -1,0 +1,2 @@
+sed -i '/val alarmRingtoneIndex: StateFlow<Int>/i\    val showWorldClockGlobe: StateFlow<Boolean> = settingsRepository.showWorldClockGlobe\        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), true)' app/src/main/java/com/example/ui/screens/settings/SettingsViewModel.kt
+sed -i '/fun setAlarmRingtoneIndex/i\    fun setShowWorldClockGlobe(enabled: Boolean) {\        viewModelScope.launch {\            settingsRepository.setShowWorldClockGlobe(enabled)\        }\    }' app/src/main/java/com/example/ui/screens/settings/SettingsViewModel.kt

@@ -1,0 +1,6 @@
+{
+  "name": "CHRONOS",
+  "description": "A professional, visually beautiful, and fully functional multi-purpose clock app.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

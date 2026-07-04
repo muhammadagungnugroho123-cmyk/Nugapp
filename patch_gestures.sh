@@ -1,0 +1,2 @@
+sed -i '/var offset by remember { mutableStateOf(Offset.Zero) }/a\            var manualRotation by remember { mutableStateOf(0f) }\n            var manualTilt by remember { mutableStateOf(0f) }' app/src/main/java/com/example/ui/screens/worldclock/WorldClockScreen.kt
+sed -i '/scale = (scale \* zoom).coerceIn(1f, 3f)/a\                                manualRotation += pan.x * 0.5f\n                                manualTilt = (manualTilt - pan.y * 0.5f).coerceIn(-60f, 60f)' app/src/main/java/com/example/ui/screens/worldclock/WorldClockScreen.kt

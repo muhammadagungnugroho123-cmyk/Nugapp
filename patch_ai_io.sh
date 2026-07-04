@@ -1,0 +1,2 @@
+sed -i 's/val geoResponse = java.net.URL(geoUrl).readText()/val geoResponse = kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) { java.net.URL(geoUrl).readText() }/g' app/src/main/java/com/example/ui/screens/ai/AiAssistantScreen.kt
+sed -i 's/val wRes = java.net.URL(weatherUrl).readText()/val wRes = kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) { java.net.URL(weatherUrl).readText() }/g' app/src/main/java/com/example/ui/screens/ai/AiAssistantScreen.kt

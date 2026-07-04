@@ -1,0 +1,2 @@
+sed -i '/val worldClockGlobeStyle:/a\    val temperatureUnit: StateFlow<Int> = settingsRepository.temperatureUnit\n        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)' app/src/main/java/com/example/ui/screens/settings/SettingsViewModel.kt
+sed -i '/fun setWorldClockGlobeStyle/a\    fun setTemperatureUnit(unit: Int) {\n        viewModelScope.launch {\n            settingsRepository.setTemperatureUnit(unit)\n        }\n    }' app/src/main/java/com/example/ui/screens/settings/SettingsViewModel.kt

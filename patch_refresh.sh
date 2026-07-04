@@ -1,0 +1,1 @@
+sed -i '/LaunchedEffect(hasLocationPermission, refreshTrigger)/i\    LaunchedEffect(Unit) {\n        while (true) {\n            kotlinx.coroutines.delay(5 * 60 * 1000L) // 5 minutes\n            if (hasLocationPermission) {\n                refreshTrigger++\n            }\n        }\n    }\n' app/src/main/java/com/example/ui/screens/clock/LiveWeatherCard.kt

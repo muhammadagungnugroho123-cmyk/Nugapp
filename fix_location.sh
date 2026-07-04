@@ -1,0 +1,1 @@
+sed -i 's/fusedLocationClient.lastLocation/fusedLocationClient.getCurrentLocation(com.google.android.gms.location.Priority.PRIORITY_HIGH_ACCURACY, null)/g' app/src/main/java/com/example/ui/screens/clock/LiveWeatherCard.kt
